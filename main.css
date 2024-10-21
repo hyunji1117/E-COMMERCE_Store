@@ -15,11 +15,14 @@ a,ul {
   list-style: none;
   color: #16181B;
 }
+a {
+  display: block;
+}
 
 /* HEADER */
 header {
-  border: 1px solid #333;
-
+  border-bottom: 1px double #DDD;
+  position: relative;
 }
 header .inner {
   width: 1100px;
@@ -65,10 +68,8 @@ header .top_sub_menu li:first-child::before {
   display: none;
 }
 header .top_sub_menu li a {
-  /* background-color: yellow; */
   font-size: 12px;
   padding: 9px 10px;
-  display: block;
 }
 header .sub-menu {
   display: flex;
@@ -122,5 +123,23 @@ header .sub-menu .menu li:first-child::before {
 header .sub-menu .menu li a {
   font-size: 14.5px;
   padding: 10px 15px;
-  display: block;
+}
+
+/* main menu */
+header .main-menu {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  margin: auto;
+  justify-content: center;
+  
+}
+header .main-menu li.item {
+  padding: 0px 15px;
+}
+header .main-menu li.item a {
+  font-size: 14.5px;
+  padding: 12px 20px;
 }
