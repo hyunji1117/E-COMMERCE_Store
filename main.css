@@ -31,15 +31,16 @@ header .inner {
   position: relative;
 }
 header .logo {
+  height: 65px;
   position: absolute;
-  top: 45px;
+  top: 0;
   bottom: 0;
+  left: 100px;
   margin: auto;
   cursor: pointer;
 }
 header .logo>img {
   position: relative;
-  left: 100px;
   width: 180px;
   height: 65px;
 }
@@ -132,69 +133,104 @@ header .main-menu {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
   display: flex;
 }
 header .main-menu .item {
   
 }
 header .main-menu .item .item__name {
-  padding: 12px 20px;
-  /* display: block; */
+  padding: 12px 50px 12px 0;
+  
 }
 header .main-menu .item .item__name a {
   
 }
 header .main-menu .item .item__name  {
-
+  
 }
 header .main-menu .item:first-child:hover .item__name {
-  /* background-color: pink; */
   color: #16181B;
   font-weight: bold;
   text-align: center;
 }
 header .main-menu .item .item__contents {
-  width: 100px;
+  width: 125px;
   position: fixed;
   display: none;
   box-shadow: 0px 0px 5px #DDD
 }
 header .main-menu .item:first-child:hover .item__contents {
-  display: block;
+  display: block;  
 }
 header .main-menu .item .item__contents .contents_name {
-  /* background-color: lightblue; */
-  width: 100px;
-  height: 100px;
+  background-color: #FFF;
+  width: 135px;
+  height: 80px;  
 }
-header .main-menu .item .item__contents > ul {
-
+header .main-menu .item .item__contents .contents_name>li {
+  display: flex;
 }
-header .main-menu .item .item__contents > ul > li {
-
+header .main-menu .item .item__contents .contents_name>li .truck_icon {
+  width: 20px;
+  height: 20px;
+  padding: 12px 0 0 12px;  
 }
-header .main-menu .item .item__contents > ul > li > a {
-  padding: 15px 15px 0 15px;
+header .main-menu .item .item__contents .contents_name li a {
+  width: max-content;
+  padding: 12px 12px 0 9px;
   text-align: center;
 }
 
+/* PROMOTION */
+.promotion {
+  margin: 0;
+  padding: 0;
+  background-color: pink;
+  position: relative;
+}
+.promotion .swiper {
+  width: 100%;
+  height: 500px;
+}
+.promotion .swiper .swiper-wrapper {
 
-
-
-
-
-
-header .main-menu .item a {
+}
+.promotion .swiper .swiper-wrapper .swiper-slide {
   
 }
-header .main-menu li.item:first-child:hover {
-  
+.promotion .swiper .swiper-wrapper .swiper-slide img {
+  height: 100vh;
+  /* background-repeat: no-repeat;
+  background-size : cover;
+  background-position: center center; */
 }
-header .main-menu li.item .material-icons.main {
+/* .promotion .swiper-prev,
+.promotion .swiper-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
   position: absolute;
-  top: 9px;
-  left: -10px;
-  margin: auto;
-  /* justify-content: center; */
+  top: 300px;
+  z-index: 1;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
 }
+.promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+.promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+.promotion .swiper-prev:hover,
+.promotion .swiper-next:hover {
+  background-color: #333;
+  color: #fff;
+} */

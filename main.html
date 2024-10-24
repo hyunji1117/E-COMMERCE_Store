@@ -26,6 +26,15 @@
   <link rel="stylesheet" href="./main.css" />
   <!-- //connect css -->
 
+  <!-- Swiper JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- //Swiper JS -->
+
+  <!-- connect JS -->
+  <script defer src="./main.js"></script>
+  <!-- //connect JS -->
+
 </head>
 <body>
   <!-- HEADER -->
@@ -100,10 +109,12 @@
           </div>
           <div class="item__contents">
             <ul class="contents_name">
-              <li>
+              <li class="delivery">
+                <img src="./image/track_gray.png" alt="트럭 아이콘" class="truck_icon" />
                 <a href="javascript:void(0)">새벽배송</a>
               </li>
-              <li>
+              <li class="delivery">
+                <img src="./image/truck_black.png" alt="트럭 아이콘" class="truck_icon" />
                 <a href="javascript:void(0)">1DAY배송</a>
               </li>
             </ul>
@@ -137,11 +148,65 @@
             <a href="javascript:void(0)">신발</a>
           </div>
         </li>
+      </ul>
+      
       <!-- //main menu -->
-
     </div>
-
   </header>
   <!-- //HEADER -->
+
+  <!-- PROMOTION -->
+  <scetion class="promotion">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="javascript:void(0)">
+            <img src="./image/promotion_slide1.png" alt="FASHIONABLE Big Sale.Save up to 40% off Limited time.SHOP NOW." />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="javascript:void(0)">
+            <img src="./image/promotion_slide2.png" alt="FASHION BLOG" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="javascript:void(0)">
+            <img src="./image/promotion_slide3.png" alt="지속 가능한 아이템으로 나만의 옷장 채우기" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="javascript:void(0)">
+            <img src="./image/promotion_slide4.png" alt="GET CLOTHES WITH EXCLUSIVE STYLES ONLY IN OUR SHOP!" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="javascript:void(0)">
+            <img src="./image/promotion_slide5.png" alt="2024 October calendar" />
+          </a>
+        </div>
+      </div>
+
+  <!-- pagination -->
+  <div class="swiper-pagination"></div>
+  <div class="swiper-prev">
+    <div class="material-icons">arrow_back</div>
+  </div>
+  <div class="swiper-next">
+    <div class="material-icons">arrow_forward</div>
+  </div>
+
+
+  <!-- navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- scrollbar -->
+  <div class="swiper-scrollbar"></div>  
+
+</div>
+  </scetion>
+  <!-- //PROMOTION -->
+
+
 </body>
 </html>
