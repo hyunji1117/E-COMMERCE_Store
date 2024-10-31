@@ -228,8 +228,6 @@ h2 {
   position: absolute;
   top: 15px;
   left: 230px;
-
-
 }
 .product_unit .main_board {
   width: 1040px;
@@ -237,64 +235,100 @@ h2 {
   top: 100px;
   left: 220px;
   margin: 0 auto;
-  background-color: lightgreen;
 }
-.product_unit .main_board .product-wrapper-left {
+.product_unit .main_board_row2 {
+  position: absolute;
+  top: 725px;
+  left: 220px;
+  margin: 0 auto;
+}
+.product_unit .main_board .product-wrapper-left,
+.product_unit .main_board_row2 .product-wrapper-left {
   position: absolute;
   top: 0px;
   left: 0px;
   margin: 0 auto;
+  margin-bottom: 60px;
   padding: 0 10px;
-  background-color: pink;
+  border-right: 1px solid #DDD;
 }
 .product_unit .main_board .product-wrapper-left .brand_img {
   
 }
-.product_unit .main_board .product-wrapper-left .brand_img .products_unit {
-
+.product_unit .main_board .product-wrapper-left .products_unit,
+.product_unit .main_board_row2 .product-wrapper-left .products_unit {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  margin: -15px 13px 0 12px;
+  padding: 15px 0 0;
+  background-color: #fff;
 }
-.product_unit .main_board .product-wrapper-left .brand_img .products_unit .product_img {
+.product_unit .main_board .product-wrapper-left .products_unit .product_img_wrap,
+.product_unit .main_board_row2 .product-wrapper-right .products_unit .product_img_wrap {
+  text-align: center;
+}
+.product_unit .main_board .product-wrapper-left .products_unit .product_img {
   
 }
-.product_unit .main_board .product-wrapper-left .brand_img .products_unit .brand--name {
+.product_unit .main_board .product-wrapper-left .products_unit .product_img>a {
+  
+}
+.product_unit .main_board .product-wrapper-left .products_unit .product_img>a>img {
+  
+}
+.product_unit .main_board .product-wrapper-left .products_unit .brand--name {
 
 }
-.product_unit .main_board .product-wrapper-left .brand_img .products_unit .product--name {
+.product_unit .main_board .product-wrapper-left .products_unit .product--name {
 
 }
-.product_unit .main_board .product-wrapper-left .brand_img .products_unit .product--price {
+.product_unit .main_board .product-wrapper-left .products_unit .product--price {
 
 }
-.product_unit .main_board .product-wrapper-left .brand_img .products_unit .promo_icon {
+.product_unit .main_board .product-wrapper-left .products_unit .promo_icon {
 
 }
-.product_unit .main_board .product-wrapper-right {
+.product_unit .main_board .product-wrapper-right,
+.product_unit .main_board_row2 .product-wrapper-right {
   position: absolute;
   top: 0px;
   right: 0px;
   margin: 0 auto;
+  margin-bottom: 60px;
   padding: 0 10px;
-  background-color: lightblue;
 }
 .product_unit .main_board .product-wrapper-right .brand_img {
     
 }
-.product_unit .main_board .product-wrapper-right .brand_img .products_unit {
+.product_unit .main_board .product-wrapper-right .products_unit,
+.product_unit .main_board_row2 .product-wrapper-right .products_unit {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  margin: -15px 13px 0 12px;
+  padding: 15px 0 0;
+  background-color: #fff;
+}
+.product_unit .main_board .product-wrapper-right .products_unit .product_img_wrap .product_img {
 
 }
-.product_unit .main_board .product-wrapper-right .brand_img .products_unit .product_img {
+.product_unit .main_board .product-wrapper-right .products_unit .product_img>a {
+  
+}
+.product_unit .main_board .product-wrapper-right .products_unit .product_img>a>img {
+  
+}
+.product_unit .main_board .product-wrapper-right .products_unit .brand--name {
 
 }
-.product_unit .main_board .product-wrapper-right .brand_img .products_unit .brand--name {
+.product_unit .main_board .product-wrapper-right .products_unit .product--name {
 
 }
-.product_unit .main_board .product-wrapper-right .brand_img .products_unit .product--name {
+.product_unit .main_board .product-wrapper-right .products_unit .product--price {
 
 }
-.product_unit .main_board .product-wrapper-right .brand_img .products_unit .product--price {
-
-}
-.product_unit .main_board .product-wrapper-right .brand_img .products_unit .promo_icon {
+.product_unit .main_board .product-wrapper-right .products_unit .promo_icon {
 
 }
 
