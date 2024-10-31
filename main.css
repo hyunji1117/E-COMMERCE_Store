@@ -1,4 +1,8 @@
 /* COMMON */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
 body {
   height: 3000px;
   color: #16181B;
@@ -10,6 +14,7 @@ body {
 }
 img {
   display: block;
+  max-width: 100%;
 }
 a,ul {
   text-decoration: none;
@@ -214,7 +219,7 @@ header .main-menu .item .item__contents .contents_name li a {
 /* PRODUCTS */
 .product_unit {
   position: relative;
-  width: 1500px;
+  width: 100%;
   margin: 0 auto;
 }
 h2 {
@@ -237,7 +242,7 @@ h2 {
   margin: 0 auto;
 }
 .product_unit .main_board_row2 {
-  position: absolute;
+  position: relative;
   top: 725px;
   left: 220px;
   margin: 0 auto;
@@ -265,7 +270,7 @@ h2 {
   background-color: #fff;
 }
 .product_unit .main_board .product-wrapper-left .products_unit .product_img_wrap,
-.product_unit .main_board_row2 .product-wrapper-right .products_unit .product_img_wrap {
+.product_unit .main_board_row2 .product-wrapper-left .products_unit .product_img_wrap {
   text-align: center;
 }
 .product_unit .main_board .product-wrapper-left .products_unit .product_img {
@@ -289,14 +294,21 @@ h2 {
 .product_unit .main_board .product-wrapper-left .products_unit .promo_icon {
 
 }
-.product_unit .main_board .product-wrapper-right,
-.product_unit .main_board_row2 .product-wrapper-right {
+.product_unit .main_board .product-wrapper-right {
   position: absolute;
   top: 0px;
   right: 0px;
   margin: 0 auto;
   margin-bottom: 60px;
   padding: 0 10px;
+}
+.product_unit .main_board_row2 .product-wrapper-right {
+  position: absolute;
+  top: 0px;
+  right: 440px;
+  margin: 0 auto;
+  /* margin-bottom: 60px;
+  padding: 0 10px; */
 }
 .product_unit .main_board .product-wrapper-right .brand_img {
     
@@ -309,6 +321,10 @@ h2 {
   margin: -15px 13px 0 12px;
   padding: 15px 0 0;
   background-color: #fff;
+}
+.product_unit .main_board .product-wrapper-right .products_unit .product_img_wrap,
+.product_unit .main_board_row2 .product-wrapper-right .products_unit .product_img_wrap {
+  text-align: center;
 }
 .product_unit .main_board .product-wrapper-right .products_unit .product_img_wrap .product_img {
 
@@ -332,3 +348,31 @@ h2 {
 
 }
 
+
+/* FOOTER */
+footer {
+
+}
+footer .footer_menu {
+
+}
+footer .footer_menu .menu_li {
+  display: flex;
+}
+footer .footer_menu .menu_li li::before {
+  content: "";
+  width: 1px;
+  height: 14.5px;
+  background-color: #DDD;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+header .sub-menu .menu li:first-child::before {
+  display: none;
+}
+header .sub-menu .menu li a {
+  font-size: 14.5px;
+  padding: 10px 15px;
+}
