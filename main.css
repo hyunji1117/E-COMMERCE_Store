@@ -31,7 +31,7 @@ header {
   position: relative;
 }
 header .inner {
-  width: 1100px;
+  width: 1200px;
   height: 165px;
   margin: 0 auto;
   position: relative;
@@ -92,12 +92,13 @@ header .sub-menu .search {
 header .sub-menu .search input {
   width: 340px;
   height: 42px;
-  padding: 0 10px 0 14px;
   border: 1.5px solid #F44336;
   box-sizing: border-box;
   border-radius: 50px;
+  margin-right: 100px;
+  display: block;
+  padding: 0 10px 0 14px;
   outline: none;
-  margin-right: 40px;
 }
 header .sub-menu .search .material-icons {
   width: 40px;
@@ -106,7 +107,7 @@ header .sub-menu .search .material-icons {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 55px;
+  right: 110px;
   margin: auto;
   cursor: pointer;
 }
@@ -131,23 +132,23 @@ header .sub-menu .menu li:first-child::before {
 }
 header .sub-menu .menu li a {
   font-size: 14.5px;
-  padding: 10px 15px;
+  padding: 10px;
 }
-
 /* main menu */
 header .main-menu {
   position: absolute;
   bottom: 0;
+  left: 0;
   right: 0;
   z-index: 2;
   display: flex;
+  justify-content: space-evenly;
 }
 header .main-menu .item {
   
 }
 header .main-menu .item .item__name {
-  padding: 12px 50px 12px 0;
-  
+  padding: 12px 50px 10px;
 }
 header .main-menu .item .item__name a {
   
@@ -162,17 +163,18 @@ header .main-menu .item:first-child:hover .item__name {
 }
 header .main-menu .item .item__contents {
   width: 125px;
-  position: fixed;
+  position: absolute;
   display: none;
-  box-shadow: 0px 0px 5px #DDD
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+  /* box-shadow: 0 0 5px #EBEBEB; */
 }
 header .main-menu .item:first-child:hover .item__contents {
   display: block;  
 }
 header .main-menu .item .item__contents .contents_name {
   background-color: #FFF;
-  width: 135px;
-  height: 80px;  
+  width: 130px;
+  height: auto;  
 }
 header .main-menu .item .item__contents .contents_name>li {
   display: flex;
@@ -184,8 +186,11 @@ header .main-menu .item .item__contents .contents_name>li .truck_icon {
 }
 header .main-menu .item .item__contents .contents_name li a {
   width: max-content;
-  padding: 12px 12px 0 9px;
+  padding: 12px 9px 12px;
   text-align: center;
+}
+header .main-menu .item .item__contents .contents_name li a:not(first-child) {
+  border-top: 1px solid #CCC;
 }
 
 /* PROMOTION */
@@ -347,7 +352,7 @@ h2 {
 /* FOOTER */
 footer {
   position : relative;
-  transform : translateY(400%);
+  transform : translateY(310%);
   background-color: pink;
 }
 footer .footer_menu {
@@ -357,10 +362,12 @@ footer .footer_menu {
   background-color: #F9F9F9;
   border-top: 1px solid #E4E4E4;
   border-bottom: 1px solid #E4E4E4;
+  
 }
 footer .footer_menu .menu_ul {
   margin: 0 200px;
   font-size: 14.5px;
+  align-items: center;
 }
 footer .footer_menu .menu_ul>li {
   float: left;
@@ -369,9 +376,9 @@ footer .footer_menu .menu_ul li::before {
   content: "";
   width: 1px;
   height: 14.5px;
-  background-color: #DDD;
+  background-color: #D9D9D9;
   position: absolute;
-  top: 0;
+  top: -350px;
   bottom: 0;
   margin: auto;
 }
@@ -379,8 +386,7 @@ footer .footer_menu .menu_ul li:first-child::before {
   display: none;
 }
 footer .footer_menu .menu_ul li a {
-  /* font-size: 14.5px; */
-  padding: 10px 15px;
+  padding: 20px 25px;
 }
 footer .footer_menu .menu_ul li a.red {
   color: #F44336;
@@ -397,12 +403,40 @@ footer .footer_menu .footer_toggle_menu .toggle_menu {
 
 }
 footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--name {
+  border: 1px solid #CCC;
+  outline: none;
+  text-align: center;
+}
+footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--name:focus {
+  width: 165px;
+  height: 90px;
+  background-color: #fff;
+  font-size: 13px;
+  transition: height .4s;
+}
+footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--name button {
+  width: 165px;
+  height: 30px;
+  padding: 0 10px 0 10px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  
+}
+footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--name .material-icons {
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+}
+footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--contents {
 
 }
-footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--name a {
+footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--contents li {
 
 }
+footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--contents li a {
 
+}
 
 footer .footer_contents {
   font-size: 12px;
