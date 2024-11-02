@@ -17,19 +17,21 @@ new Swiper(".swiper", {
 });
 
 //FOOTER
-const toggleEl = document.querySelector('.footer_toggle_menu'); //class가 search인 요소를 찾아서 searchEl 변수에 할당하기
-const searchToggleMenuEl = toggleEl.querySelector('toggle_menu--name'); //앞서 찾아둔 searchEl변수에서 input을 찾기
-
-toggleEl.addEventListener('click', function () { //searchInputEl이 클릭되면 익명함수 로직이 실행된다. 
-  searchToggleMenuEl.focus(); //실제로 foucus를 강제 적용하기.
-});
-
-searchToggleMenuEl.addEventListener('focus', function () { //만약에 searchInput에 foucus(마우스 클릭)가 되면 'focused'class가 추가되어 실행된다. = 핸들러
-  toggleEl.classList.add('focused'); //class정보를 가지고 있는 객체에 어떤 class내용을 추가하겠다. 
-  searchToggleMenuEl.setAttribute('toggle_menu--contents', ' ⃝ ⃝ ⃝ 주식회사'); //searchInputEl변수에 Attribute(html)을 지정한다. 
-});
-
-searchToggleMenuEl.addEventListener('blur', function () { //blur: focus가 해제 되었을 때를 의미한다.
-  toggleEl.classList.remove('focused'); //searchInputEl에 focus가 해제되면 새로 추가한 class focused를 삭제한다.  
-  searchToggleMenuEl.setAttribute('toggle_menu--contents', ' ');
+// 슬라이드 영역 요소 검색!
+const footerToggleEl = document.querySelector('.toggle_menu--contents');
+// 슬라이드 영역를 토글하는 버튼 검색!
+const footerToggleBtnEl = document.querySelector('.footer_toggle_menu');
+// 슬라이드 영역 숨김 여부 기본값!
+let isHidefooterToggle = false;
+// 토글 버튼을 클릭하면,
+footerToggleBtnEl.addEventListener('click', function () {
+  // 슬라이드 영역 숨김 여부를 반댓값으로 할당!
+  isHidefooterToggle = !isHidefooterToggle
+  // 요소를 숨겨야 하면,
+  if (isHidefooterToggle) {
+    footerToggleEl.classList.add('hide');
+  // 요소가 보여야 하면,
+  } else {
+    footerToggleEl.classList.remove('hide');
+  }
 });

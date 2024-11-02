@@ -251,7 +251,7 @@ h2 {
 .product_unit .main_board_row2 .product-wrapper-left {
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: 0;
   margin: 0 auto;
   margin-bottom: 60px;
   padding: 0 10px;
@@ -297,7 +297,7 @@ h2 {
 .product_unit .main_board .product-wrapper-right {
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: 0;
   margin: 0 auto;
   margin-bottom: 60px;
   padding: 0 10px;
@@ -362,14 +362,14 @@ footer .footer_menu {
   background-color: #F9F9F9;
   border-top: 1px solid #E4E4E4;
   border-bottom: 1px solid #E4E4E4;
-  
+  position: relative;
 }
 footer .footer_menu .menu_ul {
   margin: 0 200px;
   font-size: 14.5px;
   align-items: center;
 }
-footer .footer_menu .menu_ul>li {
+footer .footer_menu .menu_ul li {
   float: left;
 }
 footer .footer_menu .menu_ul li::before {
@@ -378,7 +378,7 @@ footer .footer_menu .menu_ul li::before {
   height: 14.5px;
   background-color: #D9D9D9;
   position: absolute;
-  top: -350px;
+  top: 0;
   bottom: 0;
   margin: auto;
 }
@@ -394,50 +394,68 @@ footer .footer_menu .menu_ul li a.red {
 footer .footer_menu .footer_toggle_menu {
   font-size: 14.5px;
   float: right;
-  display: inline-block;
   padding: 10px 15px;
-  margin: 0 250px 0 0;
-
+  margin: 4px 250px 4px 0;
+  position: relative;
 }
 footer .footer_menu .footer_toggle_menu .toggle_menu {
-
+  
 }
 footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--name {
   border: 1px solid #CCC;
   outline: none;
+  font-size: 14.5px;
   text-align: center;
-}
-footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--name:focus {
-  width: 165px;
-  height: 90px;
-  background-color: #fff;
-  font-size: 13px;
-  transition: height .4s;
 }
 footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--name button {
   width: 165px;
   height: 30px;
-  padding: 0 10px 0 10px;
+  padding: 0 20px 0 10px;
   border: 0;
   background-color: transparent;
   cursor: pointer;
-  
 }
 footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--name .material-icons {
-  width: 24px;
   height: 24px;
-  justify-content: center;
+  position: absolute;
+  top: 14px;
+  bottom: 0;
+  margin: 0;
+  padding-left: 5px;
 }
-footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--contents {
+footer .footer_menu .toggle_menu--contents {
+  position: absolute;
+  top: 45px;
+  right: 265px;
+  width: 165px;
+  height: 70px;
+  background-color: #F9F9F9;
+  border-top: 1px solid #F4F4F4;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  /* background-color: lightblue; */
+  font-size: 14.5px;
+  text-align: center;
+  align-items: center;
+  transition: height .1s;
+  overflow: hidden;
+  /* display: none; */
+}
+footer .footer_menu .toggle_menu--contents.hide {
+  height: 0;
+}
+footer .footer_menu .toggle_menu--contents li {
 
 }
-footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--contents li {
-
+footer .footer_menu .toggle_menu--contents li a {
+  position: relative;
+  top: 5px;
+  padding: 5px 10px;
+  display: block;
 }
-footer .footer_menu .footer_toggle_menu .toggle_menu .toggle_menu--contents li a {
 
-}
-
+/* footer_contents */
 footer .footer_contents {
   font-size: 12px;
 }
