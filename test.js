@@ -23,7 +23,6 @@ const footerToggleEl = document.querySelector('.toggle_menu--contents');
 const footerToggleBtnEl = document.querySelector('.footer_toggle_menu');
 // 슬라이드 영역 숨김 여부 기본값!
 let isHidefooterToggle = true;
-footerToggleEl.classList.add('hide');
 // 토글 버튼을 클릭하면,
 footerToggleBtnEl.addEventListener('click', function () {
   // 슬라이드 영역 숨김 여부를 반댓값으로 할당!
