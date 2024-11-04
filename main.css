@@ -161,6 +161,7 @@ header .main-menu .main-menu--wrap {
   right: 0;
   z-index: 2;
   display: flex;
+  margin-bottom: 5px;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -235,6 +236,7 @@ header .main-menu .main-menu--wrap .item--contents .delivery>a:hover {
 
 /* PROMOTION */
 .promotion {
+  color: #FFF;
 }
 .promotion .swiper {
   
@@ -252,8 +254,24 @@ header .main-menu .main-menu--wrap .item--contents .delivery>a:hover {
   margin-left: auto;
   margin-right: auto;
 }
-.swiper-pagination {
-  
+
+/* PAGINATION */
+.promotion .swiper .swiper-pagination {
+  color: #FFF;
+}
+.span.swiper-pagination-bullet {
+  color: #FFF;
+}
+.promotion .swiper .swiper-button-prev {
+  color: #FFF;
+  margin-left: 150px;
+}
+.promotion .swiper .swiper-button-next {
+  color: #FFF;
+  margin-right: 150px;
+}
+.promotion .swiper .swiper-scrollbar {
+  color: #FFF;
 }
 
 /* PRODUCTS */
