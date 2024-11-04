@@ -31,7 +31,9 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- //Swiper JS -->
 
-  
+  <!-- connect JS -->
+  <script defer src="./main.js"></script>
+  <!-- //connect JS -->
 
 </head>
 <body>
@@ -97,75 +99,59 @@
       <!-- //sub-menu -->
 
       <!-- main menu -->
-      <div class="main-menu">
-        <ul class="main-menu--wrap">
-
-          <li class="item">
-            <div class="item--name">
-              <button>
-                <div class="material-icons--lists">
-                  <div class="material-icons truck" >
-                    local_shipping
-                  </div>
-                  슈팅배송
-                  <div class="material-icons arrow_drop_down">
-                    arrow_drop_down
-                  </div>
-                </div>
-              </button>
-            </div>
-  
-            <div class="item--contents">
-              <ul>
-                <li class="delivery">
-                  <a href="javascript:void(0)">새벽배송</a>
-                </li>
-                <li class="delivery">
-                  <a href="javascript:void(0)">1DAY배송</a>
-                </li>
-                <li class="delivery">
-                  <a href="javascript:void(0)">국제배송</a>
-                </li>
-                <li class="delivery">
-                  <a href="javascript:void(0)">지정일배송</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <!-- <div class="material-icons arrow_down" >
-            keyboard_arrow_down
-          </div> -->
-
-          <li class="item">
-            <div class="item--name">
-              <a href="javascript:void(0)">여성의류</a>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item--name">
-              <a href="javascript:void(0)">남성의류</a>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item--name">
-              <a href="javascript:void(0)">스포츠/레져</a>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item--name">
-              <a href="javascript:void(0)">패션잡화</a>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item--name">
-              <a href="javascript:void(0)">신발</a>
-            </div>
-          </li>
-
+      <ul class="main-menu">
+        <li class="item">
+        <!-- <div class="material-icons truck" >
+          local_shipping
+        </div> -->
+          <div class="item__name">
+            <a href="javascript:void(0)">슈팅배송</a>
+          </div>
+          <div class="item__contents">
+            <ul class="contents_name">
+              <li class="delivery">
+                <img src="./image/track_gray.png" alt="트럭 아이콘" class="truck_icon" />
+                <a href="javascript:void(0)">새벽배송</a>
+              </li>
+              <li class="delivery">
+                <img src="./image/truck_black.png" alt="트럭 아이콘" class="truck_icon" />
+                <a href="javascript:void(0)">1DAY배송</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!-- <div class="material-icons arrow_down" >
+          keyboard_arrow_down
+        </div> -->
+        <li class="item">
+          <div class="item__name">
+            <a href="javascript:void(0)">여성의류</a>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item__name">
+            <a href="javascript:void(0)">남성의류</a>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item__name">
+            <a href="javascript:void(0)">스포츠/레져</a>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item__name">
+            <a href="javascript:void(0)">패션잡화</a>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item__name">
+            <a href="javascript:void(0)">신발</a>
+          </div>
+        </li>
       </ul>
+      
+      <!-- //main menu -->
     </div>
-    <!-- //main menu -->
   </header>
   <!-- //HEADER -->
 
@@ -480,7 +466,7 @@
           <div class="toggle_menu--name">
             <button>
               FAMILY SITE
-              <div class="material-icons keyboard_arrow_down">
+              <div class="material-icons">
                 keyboard_arrow_down
               </div>
             </button>
@@ -536,8 +522,5 @@
 
   <!-- //FOOTER -->
 
-  <!-- connect JS -->
-  <script defer src="./main.js"></script>
-  <!-- //connect JS -->
 </body>
 </html>

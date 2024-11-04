@@ -37,6 +37,6 @@ footerToggleBtnEl.addEventListener('click', function () {
   }
 });
 
-// 올 해 연도
+// 올 해 연도 자동계산
 const thisYear = document.querySelector('.this-year');
 thisYear.textContent = new Date().getFullYear();

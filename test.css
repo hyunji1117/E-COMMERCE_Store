@@ -91,9 +91,6 @@ header .top_sub_menu li a {
   font-size: 12px;
   padding: 9px 10px;
 }
-header .top_sub_menu li a:hover {
-  text-decoration: underline;
-}
 header .sub-menu {
   display: flex;
   position: absolute;
@@ -128,6 +125,9 @@ header .sub-menu .search .material-icons {
 header .sub-menu .menu {
   display: flex;
 }
+header .sub-menu .menu li {
+  
+}
 header .sub-menu .menu li::before {
   content: "";
   width: 1px;
@@ -145,92 +145,63 @@ header .sub-menu .menu li a {
   font-size: 14.5px;
   padding: 10px;
 }
-header .sub-menu .menu li a:hover {
-  text-decoration: underline;
-}
-
 /* main menu */
 header .main-menu {
-  border-top: 1px solid #DDD ;
-}
-header .main-menu .main-menu--wrap {
-  width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 2;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
 }
-header .main-menu .main-menu--wrap .item {
+header .main-menu .item {
   
 }
-header .main-menu .main-menu--wrap .item .item--name {
-  position: relative;
+header .main-menu .item .item__name {
+  padding: 12px 50px 10px;
 }
-header .main-menu .main-menu--wrap .item:hover .item--name {
-  text-decoration: underline;
+header .main-menu .item .item__name a {
+  
 }
-header .main-menu .main-menu--wrap .item:first-child:hover .item--name {
-
+header .main-menu .item .item__name  {
+  
 }
-header .main-menu .main-menu--wrap .item .item--name button {
-  width: 170px;
-  height: 30px;
-  font-size: 16px;
-  border: 0;
+header .main-menu .item:first-child:hover .item__name {
+  color: #16181B;
+  font-weight: bold;
+  text-align: center;
 }
-header .main-menu .main-menu--wrap .item .item--name button:hover {
-  text-decoration: underline;
-}
-header .main-menu .main-menu--wrap .item .item--name .material-icons--lists {
-  justify-content: center;
-}
-header .main-menu .main-menu--wrap .item .item--name button .material-icons--lists .material-icons.truck {
+header .main-menu .item .item__contents {
+  width: 125px;
   position: absolute;
-  top: 3px;
-  left: 20px;
-  bottom: 0;
-  margin: 0;
-}
-header .main-menu .main-menu--wrap .item--name button .material-icons.arrow_drop_down {
-  width: 24px;
-  position: absolute;
-  top: 2.5px;
-  right: 25px;
-  bottom: 0;
-  margin: 0;
-  color: #CCC;
-  /* padding-left: 5px; */
-}
-header .main-menu .main-menu--wrap .item--contents {
-  position: absolute;
-  top: 30.5px;
-  left: 140px;
-  width: 115px;
-  height: 135px;
-  background-color: #F9F9F9;
-  font-size: 15px;
-  border-radius: 3px;
-  text-align: left;
-  transition: height .1s;
-  overflow: hidden;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   display: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+  /* box-shadow: 0 0 5px #EBEBEB; */
 }
-header .main-menu .main-menu--wrap .item:first-child:hover .item--contents {
-  display: block;
+header .main-menu .item:first-child:hover .item__contents {
+  display: block;  
 }
-header .main-menu .main-menu--wrap .item--contents .delivery>a {
-  color: #777;
-  font-weight: lighter;
-  padding: 9.5px 0 0 24px;
+header .main-menu .item .item__contents .contents_name {
+  background-color: #FFF;
+  width: 130px;
+  height: auto;  
 }
-header .main-menu .main-menu--wrap .item--contents .delivery>a:hover {
-  color: #F44336;
-  text-decoration: underline #F44336;
+header .main-menu .item .item__contents .contents_name>li {
+  display: flex;
+}
+header .main-menu .item .item__contents .contents_name>li .truck_icon {
+  width: 20px;
+  height: 20px;
+  padding: 12px 0 0 12px;  
+}
+header .main-menu .item .item__contents .contents_name li a {
+  width: max-content;
+  padding: 12px 9px 12px;
+  text-align: center;
+}
+header .main-menu .item .item__contents .contents_name li a:not(first-child) {
+  border-top: 1px solid #CCC;
 }
 
 /* PROMOTION */
@@ -440,9 +411,6 @@ footer .footer_menu .menu_ul li:first-child::before {
 }
 footer .footer_menu .menu_ul li a {
   padding: 20px 25px;
-}
-footer .footer_menu .menu_ul li a:hover {
-  text-decoration: underline;
 }
 footer .footer_menu .menu_ul li a.red {
   color: #F44336;
