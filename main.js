@@ -36,3 +36,7 @@ footerToggleBtnEl.addEventListener('click', function () {
     footerToggleEl.classList.remove('hide');
   }
 });
+
+// 올 해 연도
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
