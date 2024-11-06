@@ -161,7 +161,7 @@ header .main-menu .main-menu--wrap {
   right: 0;
   z-index: 2;
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -208,14 +208,14 @@ header .main-menu .main-menu--wrap .item--name button .material-icons.arrow_drop
 }
 header .main-menu .main-menu--wrap .item--contents {
   position: absolute;
-  top: 30.5px;
-  left: 140px;
-  width: 115px;
+  top: 32.5px;
+  left: 130px;
+  width: 120px;
   height: 135px;
   background-color: #F9F9F9;
   font-size: 15px;
   border-radius: 3px;
-  text-align: left;
+  text-align: center;
   transition: height .1s;
   overflow: hidden;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -227,7 +227,7 @@ header .main-menu .main-menu--wrap .item:first-child:hover .item--contents {
 header .main-menu .main-menu--wrap .item--contents .delivery>a {
   color: #777;
   font-weight: lighter;
-  padding: 9.5px 0 0 24px;
+  padding: 9.5px 0 0 0px;
 }
 header .main-menu .main-menu--wrap .item--contents .delivery>a:hover {
   color: #F44336;
