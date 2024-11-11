@@ -11,6 +11,23 @@ body {
   font-size: 16px;
   line-height: 1.4;
 }
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #F44336;
+  position: absolute;
+  pointer-events: none;
+  /* 뷰포트 모서리 기준 지름 중앙정렬 */
+  transform-origin: 100% 100%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: invert(100%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 1000;
+}
+
 main {
   /* display: flex;
   flex-direction: column; */
@@ -20,6 +37,7 @@ main {
 img {
   display: block;
   max-width: 100%;
+  cursor: unset;
 }
 a,ul {
   text-decoration: none;
@@ -60,6 +78,7 @@ header .logo>img {
   position: relative;
   width: 180px;
   height: 65px;
+  
 }
 
 /* top_sub_menu */
