@@ -1,5 +1,5 @@
 # e-커머스 쇼핑몰 플랫폼
-"https://taupe-lokum-090ebf.netlify.app/"
+https://taupe-lokum-090ebf.netlify.app/
 
 ##### 참여자: 김현지 (개인 프로젝트)  
   
