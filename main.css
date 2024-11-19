@@ -1,20 +1,20 @@
 /* COMMON */
 html, body {
-  width: 100%;
-  height: 2300px;
-  overflow-x: hidden;
+  width: 1470px;
+  min-height: 100%;
 }
+
 body {
   color: #16181B;
   font-family: "Gothic A1", sans-serif;
   font-weight: 400px;
-  font-size: 16px;
+  font-size: 62.5%;
   line-height: 1.4;
 }
 
 .cursor {
-  width: 20px;
-  height: 20px;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   background-color: #F44336;
   position: absolute;
@@ -22,17 +22,14 @@ body {
   /* 뷰포트 모서리 기준 지름 중앙정렬 */
   transform-origin: 100% 100%;
   transform: translate(-50%, -50%);
-  backdrop-filter: invert(100%);
-  pointer-events: none;
+  -webkit-backdrop-filter: invert(100%);
+          backdrop-filter: invert(100%);
   mix-blend-mode: difference;
   z-index: 1000;
 }
 
 main {
-  /* display: flex;
-  flex-direction: column; */
   min-height: 150vh; /* 화면 전체 높이 */
-  /* margin: 0; */
 }
 img {
   display: block;
@@ -48,7 +45,6 @@ a {
   display: block;
 }
 button {
-  /* border: none; */
   outline: none;
   background-color: inherit ;
   cursor: pointer;
@@ -56,11 +52,13 @@ button {
 
 /* HEADER */
 header {
+  width: 100%;
+  height: 20%;
   border-bottom: 1px double #DDD;
   position: relative;
 }
 header .inner {
-  width: 1200px;
+  width: 100%;
   height: 165px;
   margin: 0 auto;
   position: relative;
@@ -78,7 +76,6 @@ header .logo>img {
   position: relative;
   width: 180px;
   height: 65px;
-  
 }
 
 /* top_sub_menu */
@@ -107,8 +104,8 @@ header .top_sub_menu li:first-child::before {
   display: none;
 }
 header .top_sub_menu li a {
-  font-size: 12px;
-  padding: 9px 10px;
+  font-size: 1.2em;
+  padding: 0.9em 1em;
 }
 header .top_sub_menu li a:hover {
   text-decoration: underline;
@@ -116,7 +113,7 @@ header .top_sub_menu li a:hover {
 header .sub-menu {
   display: flex;
   position: absolute;
-  top: 55px;
+  top: 5.5em;
   right: 0;
 }
 header .sub-menu .search {
@@ -125,6 +122,8 @@ header .sub-menu .search {
 header .sub-menu .search input {
   width: 340px;
   height: 42px;
+  position: absolute;
+  right: 0em;
   border: 1.5px solid #F44336;
   box-sizing: border-box;
   border-radius: 50px;
@@ -197,9 +196,9 @@ header .main-menu .main-menu--wrap .item:first-child:hover .item--name {
 
 }
 header .main-menu .main-menu--wrap .item .item--name button {
-  width: 170px;
-  height: 30px;
-  font-size: 16px;
+  width: 10em;
+  height: 2em;
+  font-size: 1.6em;
   border: 0;
 }
 header .main-menu .main-menu--wrap .item .item--name button:hover {
@@ -210,30 +209,29 @@ header .main-menu .main-menu--wrap .item .item--name .material-icons--lists {
 }
 header .main-menu .main-menu--wrap .item .item--name button .material-icons--lists .material-icons.truck {
   position: absolute;
-  top: 3px;
-  left: 20px;
+  top: 0.15em;
+  left: 0.5em;
   bottom: 0;
   margin: 0;
 }
 header .main-menu .main-menu--wrap .item--name button .material-icons.arrow_drop_down {
-  width: 24px;
+  width: 1em;
   position: absolute;
-  top: 2.5px;
-  right: 25px;
+  top: 0.15em;
+  right: 0.8em;
   bottom: 0;
   margin: 0;
   color: #CCC;
-  /* padding-left: 5px; */
 }
 header .main-menu .main-menu--wrap .item--contents {
   position: absolute;
-  top: 32.5px;
-  left: 130px;
-  width: 120px;
-  height: 135px;
+  top: 2.25em;
+  left: 12em;
+  width: 8em;
+  height: 9em;
   background-color: #F9F9F9;
-  font-size: 15px;
-  border-radius: 3px;
+  font-size: 1.5em;
+  border-radius: 0.13em;
   text-align: center;
   transition: height .1s;
   overflow: hidden;
@@ -268,8 +266,8 @@ header .main-menu .main-menu--wrap .item--contents .delivery>a:hover {
 }
 .promotion .swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
-  height: 500px;
-  object-fit: scale-down;
+  /* object-fit: scale-down; */
+  /* object-fit: contain; */
   display: block;
   margin-left: auto;
   margin-right: auto;
