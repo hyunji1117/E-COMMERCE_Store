@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5">
   <title>My shop</title>
   <!-- favicon -->
   <link rel="icon" href="./favicon.png" />
@@ -22,8 +22,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <!-- //material symbol -->
 
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- //GSAP -->
+
   <!-- connect css -->
-  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="./style/main.css" />
   <!-- //connect css -->
 
   <!-- Swiper JS -->
@@ -31,6 +35,9 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- //Swiper JS -->
 
+  <!-- connect JS -->
+  <script defer src="./main.js"></script>
+  <!-- //connect JS -->
   
 
 </head>
@@ -39,16 +46,9 @@
   <!-- HEADER -->
   <header>
 
-    <div class="inner">
-
-      <!-- logo img -->
-      <a href="/" class="logo">
-        <img src="./image/logo.png" alt="로고 이미지" />
-      </a>
-      <!-- //logo img -->
-
-      <!-- top_sub_menu -->
-      <ul class="top_sub_menu">
+    <!-- top_sub_menu -->
+    <div class="top_sub_menu">
+      <ul class="menu_list--user_manage">
         <li>
           <a href="javascript:void(0)">회원가입</a>
         </li>
@@ -62,21 +62,30 @@
           <a href="javascript:void(0)">고객센터</a>
         </li>
       </ul>
-      <!-- //top_sub_menu -->
+    </div>
+    <!-- //top_sub_menu -->
+
+    <div class="header__inner">
+      <!-- logo img -->
+      <h1>
+        <a href="./main.html" class="logo">
+          <img src="./image/logo.png" alt="로고 이미지" />
+        </a>
+      </h1>
+      <!-- //logo img -->
+
+      <!-- search box -->
+      <div class="search">
+        <input type="text" />
+        <div class="material-icons">
+          search
+        </div>
+      </div>
+      <!-- //search box -->
 
       <!-- sub-menu -->
       <div class="sub-menu">
-
-        <!-- search box -->
-        <div class="search">
-          <input type="text" />
-            <div class="material-icons">
-              search
-            </div>
-        </div>
-        <!-- //search box -->
-
-        <ul class="menu">
+        <ul class="menu_list--promotion_event">
           <li>
             <a href="javascript:void(0)">베스트</a>
           </li>
@@ -93,138 +102,154 @@
             <a href="javascript:void(0)">선물하기</a>
           </li>
         </ul>
-
       </div>
       <!-- //sub-menu -->
 
-      <!-- main menu -->
-      <div class="main-menu">
-        <ul class="main-menu--wrap">
-
-          <li class="item">
-            <div class="item--name">
-              <button>
-                <div class="material-icons--lists">
-                  <div class="material-icons truck" >
-                    local_shipping
-                  </div>
-                  슈팅배송
-                  <div class="material-icons arrow_drop_down">
-                    arrow_drop_down
-                  </div>
-                </div>
-              </button>
-            </div>
-  
-            <div class="item--contents">
-              <ul>
-                <li class="delivery">
-                  <a href="javascript:void(0)">새벽배송</a>
-                </li>
-                <li class="delivery">
-                  <a href="javascript:void(0)">1DAY배송</a>
-                </li>
-                <li class="delivery">
-                  <a href="javascript:void(0)">국제배송</a>
-                </li>
-                <li class="delivery">
-                  <a href="javascript:void(0)">지정일배송</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <!-- <div class="material-icons arrow_down" >
-            keyboard_arrow_down
-          </div> -->
-
-          <li class="item">
-            <div class="item--name">
-              <a href="javascript:void(0)">여성의류</a>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item--name">
-              <a href="javascript:void(0)">남성의류</a>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item--name">
-              <a href="javascript:void(0)">화장품</a>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item--name">
-              <a href="javascript:void(0)">패션잡화</a>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item--name">
-              <a href="javascript:void(0)">신발</a>
-            </div>
-          </li>
-
-      </ul>
+      <button class="material-icons more-btn">
+        menu
+      </button>
     </div>
-    <!-- //main menu -->
   </header>
   <!-- //HEADER -->
-
+    
+    <!-- MAIN -->
   <main>
+    <!-- main menu -->
+    <div class="main-menu">
 
-    <!-- PROMOTION -->
-  <scetion class="promotion">
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <a href="javascript:void(0)">
-            <img src="./image/promotion_slide1.png" alt="FASHIONABLE Big Sale.Save up to 40% off Limited time.SHOP NOW." />
-          </a>
+      <!-- delivery -->
+      <div class="delivery">
+
+        <div class="deliver__item--name">
+          <button>
+            <div class="material-icons--lists">
+              <div class="material-icons truck" >
+                local_shipping
+              </div>
+              <h2>슈팅배송</h2>
+              <div class="material-icons arrow_drop_down">
+                arrow_drop_down
+              </div>
+            </div>
+          </button>
         </div>
-        <div class="swiper-slide">
-          <a href="javascript:void(0)">
-            <img src="./image/promotion_slide2.png" alt="FASHION BLOG" />
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="javascript:void(0)">
-            <img src="./image/promotion_slide3.png" alt="지속 가능한 아이템으로 나만의 옷장 채우기" />
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="javascript:void(0)">
-            <img src="./image/promotion_slide4.png" alt="GET CLOTHES WITH EXCLUSIVE STYLES ONLY IN OUR SHOP!" />
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="javascript:void(0)">
-            <img src="./image/promotion_slide5.png" alt="2024 October calendar" />
-          </a>
-        </div>
+
+          <div class="deliver__item--contents">
+            <ul>
+              <li class="deliver__contents">
+                <a href="javascript:void(0)">새벽배송</a>
+              </li>
+              <li class="deliver__contents">
+                <a href="javascript:void(0)">1DAY배송</a>
+              </li>
+              <li class="deliver__contents">
+                <a href="javascript:void(0)">국제배송</a>
+              </li>
+              <li class="deliver__contents">
+                <a href="javascript:void(0)">지정일배송</a>
+              </li>
+            </ul>
+          </div>
       </div>
+      <!-- //delivery -->
 
-      <!-- pagination -->
-      <div class="swiper-pagination"></div>
-  
-      <!-- navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <!-- scrollbar -->
-      <div class="swiper-scrollbar"></div>  
+      <!-- category -->
+      <ul class="menu_list--shopping_cate">
+        <li class="shopping_cate__item--name">
+          <a href="javascript:void(0)">
+            <span>
+              여성의류
+            </span>
+          </a>
+        </li>
+        <li class="shopping_cate__item--name">
+          <a href="javascript:void(0)">
+            <span>
+              남성의류
+            </span>
+          </a>
+        </li>
+        <li class="shopping_cate__item--name">
+          <a href="javascript:void(0)">
+            <span>
+              화장품
+            </span>
+          </a>
+        </li>
+        <li class="shopping_cate__item--name">
+          <a href="javascript:void(0)">
+            <span>
+              패션잡화
+            </span>
+          </a>
+        </li>
+        <li class="shopping_cate__item--name">
+          <a href="javascript:void(0)">
+            <span>
+              신발
+            </span>
+          </a>
+        </li>
+      </ul> 
+      <!-- //category -->
 
     </div>
-  </scetion>
-  <!-- //PROMOTION -->
+    <!-- //main menu -->
+  
 
-  <!-- PRODUCTS -->
-  <section class="product_unit">
-    <h2>오늘의 브랜드</h2>
+    <!-- PROMOTION -->
+    <section class="promotion">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="javascript:void(0)">
+              <img src="./image/promotion_slide1.png" alt="FASHIONABLE Big Sale.Save up to 40% off Limited time.SHOP NOW." />
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="javascript:void(0)">
+              <img src="./image/promotion_slide2.png" alt="FASHION BLOG" />
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="javascript:void(0)">
+              <img src="./image/promotion_slide3.png" alt="지속 가능한 아이템으로 나만의 옷장 채우기" />
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="javascript:void(0)">
+              <img src="./image/promotion_slide4.png" alt="GET CLOTHES WITH EXCLUSIVE STYLES ONLY IN OUR SHOP!" />
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="javascript:void(0)">
+              <img src="./image/promotion_slide5.png" alt="2024 October calendar" />
+            </a>
+          </div>
+        </div>
 
-    <div class="main_board">
-      <div class="product-wrapper-left">
+        <!-- pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- navigation buttons -->
+        <div class="nav_btn">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+        <!-- scrollbar -->
+        <div class="swiper-scrollbar"></div>  
+
+      </div>
+    </section>
+    <!-- //PROMOTION -->
+
+    <!-- PRODUCTS -->
+    <h3>오늘의 브랜드</h3>
+    <section class="product_unit">
+      <div class="product-wrapper">
         <div class="brand_img">
-          <img src="./image/brand_img(1).png" alt="LICERIA & CO.NATURAL COSMETICS">
+          <img src="../image/brand_img(1).png" alt="LICERIA & CO.NATURAL COSMETICS">
         </div>
         
         <ul class="products_unit">
@@ -275,9 +300,9 @@
         </ul>
       </div>
 
-      <div class="product-wrapper-right">
+      <div class="product-wrapper">
         <div class="brand_img">
-          <img src="./image/brand_img(2).png" alt="LICERIA & CO.NATURAL COSMETICS">
+          <img src="../image/brand_img(2).png" alt="LICERIA & CO.NATURAL COSMETICS">
         </div>
         
         <ul class="products_unit">
@@ -327,13 +352,10 @@
           <!-- //PRODUCT4 -->
         </ul>
       </div>
-      
-    </div>
 
-    <div class="main_board_row2">
-      <div class="product-wrapper-left">
+      <div class="product-wrapper">
         <div class="brand_img">
-          <img src="./image/brand_img(3).png" alt="LICERIA & CO.NATURAL COSMETICS">
+          <img src="../image/brand_img(3).png" alt="LICERIA & CO.NATURAL COSMETICS">
         </div>
         
         <ul class="products_unit">
@@ -345,12 +367,12 @@
               </a>
             </div>
             <p class="brand--name">
-              <a href="javascript:void(0)">Brand Strategy</a>
+              <a href="javascript:void(0)">LICERIA & CO.</a>
             </p>
             <p class="product--name">
-              <a href="javascript:void(0)">NATURAL COSMETICS 세럼3</a>
+              <a href="javascript:void(0)">NATURAL COSMETICS 에센스</a>
             </p>
-            <span class="product--price">51,650
+            <span class="product--price">49,700
               <span class="product--price_currency">원</span>
             </span>
             <div class="promo_icon">
@@ -367,12 +389,12 @@
               </a>
             </div>
             <p class="brand--name">
-              <a href="javascript:void(0)">Brand Strategy</a>
+              <a href="javascript:void(0)">LICERIA & CO.</a>
             </p>
             <p class="product--name">
-              <a href="javascript:void(0)">NATURAL COSMETICS 토너</a>
+              <a href="javascript:void(0)">NATURAL COSMETICS 수분크림</a>
             </p>
-            <span class="product--price">27,000
+            <span class="product--price">35,000
               <span class="product--price_currency">원</span>
             </span>
             <div class="promo_icon">
@@ -384,7 +406,7 @@
         </ul>
       </div>
 
-      <div class="product-wrapper-right">
+      <div class="product-wrapper">
         <div class="brand_img">
           <img src="./image/brand_img(4).png" alt="LICERIA & CO.NATURAL COSMETICS">
         </div>
@@ -398,12 +420,12 @@
               </a>
             </div>
             <p class="brand--name">
-              <a href="javascript:void(0)">Launching Product</a>
+              <a href="javascript:void(0)">Borcelle</a>
             </p>
             <p class="product--name">
-              <a href="javascript:void(0)">NATURAL COSMETICS 핸드크림</a>
+              <a href="javascript:void(0)">NATURAL COSMETICS 세럼1</a>
             </p>
-            <span class="product--price">8,000
+            <span class="product--price">36,600
               <span class="product--price_currency">원</span>
             </span>
             <div class="promo_icon">
@@ -420,12 +442,12 @@
               </a>
             </div>
             <p class="brand--name">
-              <a href="javascript:void(0)">Launching Product</a>
+              <a href="javascript:void(0)">Borcelle</a>
             </p>
             <p class="product--name">
-              <a href="javascript:void(0)">NATURAL COSMETICS 썬크림</a>
+              <a href="javascript:void(0)">NATURAL COSMETICS 세럼2</a>
             </p>
-            <span class="product--price">17,500
+            <span class="product--price">54,500
               <span class="product--price_currency">원</span>
             </span>
             <div class="promo_icon">
@@ -436,18 +458,14 @@
           <!-- //PRODUCT8 -->
         </ul>
       </div>
-      
-    </div>
 
-  </section>
-  <!-- //PRODUCTS -->
-
+    </section>
+    <!-- //PRODUCTS -->
   </main>
-  
+  <!-- //MAIN -->
   
 
   <!-- FOOTER -->
-
   <footer>
 
     <div class="footer_menu">
@@ -495,13 +513,7 @@
     </div>
     
     <div class="footer_contents">
-      <h2> ⃝ ⃝ ⃝ 주식회사</h2>
-      <p class="QR_info">
-        <strong>모바일 앱으로 만나세요</strong>
-        <span>
-          <img src="./image/qrcode.jpg" alt="QR코드를 통해 모바일에서 만나요.">
-        </span>
-      </p>
+      <h4> ⃝ ⃝ ⃝ 주식회사</h4>
       <div class="footer_info">
         <span>대표자: 김하브 | </span>
         <span>사업자등록번호: 000-00-00000 | 통신판매업 신고번호: 제2024-서울강남-00000호 | </span>
@@ -524,14 +536,16 @@
           Copyright &copy;<span class="this-year"></span>  ⃝ ⃝ ⃝ Co.,Ltd. All Rights Reserved.
         </p>
       </div>
+      <p class="QR_info">
+        <strong>모바일 앱으로 만나세요</strong>
+        <span>
+          <img src="./image/qrcode.jpg" alt="QR코드를 통해 모바일에서 만나요.">
+        </span>
+      </p>
     </div>
 
   </footer>
 
   <!-- //FOOTER -->
-
-  <!-- connect JS -->
-  <script defer src="./main.js"></script>
-  <!-- //connect JS -->
 </body>
 </html>
