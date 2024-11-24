@@ -40,10 +40,111 @@ https://taupe-lokum-090ebf.netlify.app/
   - Swiper 라이브러리를 사용해 슬라이더 기능을 구현해 사용자가 최신 프로모션 정보를 쉽게 접할 수 있도록 함.
   - Google Fonts로 텍스트 스타일을 시각적으로 개선.
   
-### 발생 이슈
-  - 브라우저 창 축소 시 "product unit row2"가 뷰포트에 고정되어 뷰포트와 함께 이동하는 현상 개선 중.  
-  - 브라우저 개발자 도구 확인 시 "footer"가 "product unit row2"과 중복되는 현상 개선 중.
-  - 부드러운 스크롤 경험 개선을 통해 사용자 편의성 개선 예정.
+### 4.트러블슈팅 과정
+  #### 4-1.`product unit row2` 영역이 뷰포트 축소 시 `product unit row` 위로 겹치는 문제 발생.
+  ###### 4-1-1.코드 확인 및 추가 발생 원인 파악 
+  원인: 
+  레이아웃 구조와 CSS 속성의 상호작용(예: `position`, `z-index`, `overflow`)으로 인해 중첩과 고정 이동 현상 발생.  
+
+  ###### 4-1-2.코드 확인 및 추가 발생 원인 파악 
+  ① HTML 구조 중복 및 계층 문제
+
+  이전 구현에서 `product unit row2`는 단순히 `product unit row` CSS에 클래스만 추가하여 작성.
+  이로 인해 구조적 분리 부족으로 두 영역이 독립적으로 동작하지 않고, 레이아웃 축소 시 `product unit row2`가 상위 `product unit row`와 겹침.
+  CSS 속성 문제
+
+position: relative와 top, z-index 설정으로 인해 row2가 의도치 않게 row와 상호작용.
+뷰포트 크기 축소 시, relative와 grid가 함께 사용되면서 예상치 못한 배치 문제가 발생.
+반응형 디자인 미흡
+
+뷰포트 크기에 따른 media query가 적절히 설정되지 않음.
+고정적인 width, height 및 margin으로 인해 유동적인 레이아웃이 깨짐.
+
+  #### 4-2.브라우저 개발자 도구 확인 시 "footer"가 "product unit row2"과 중복되는 현상 개선 중.
+  #### 4-3.부드러운 스크롤 경험 개선을 위해 반응형 뷰포트 코드로 수정 진행 중.
+
+  #### 4-4.`.sub-menu` 내부의 <ul> 리스트를 Flex 컨테이너를 사용해 수직 중앙으로 정렬 안됨.
+  ###### 4-4-1.문제 정의
+  증상:  
+  `<ul class="menu_list--promotion_event">`가 부모 요소`.sub-menu`의 수직 중앙에 정렬되지 않고, 상단에 위치.   
+
+  ###### 4-4-2.코드 확인 및 추가 발생 원인 파악 
+  `.menu_list--promotion_event`에 `display: flex;` 적용되어 text 수평 정렬은 적용되었지만, 부모 요소 `.sub-menu`의 높이에 따른 수직 정렬 설정이 누락되었을 가능성이 있음.
+  `.sub-menu`가 Flexbox가 아니어서 전체 높이에서 중앙 정렬이 작동하지 않을 가능성이 있음.  
+
+  ###### 4-4-3.문제의 원인 분석
+  ① `.sub-menu`의 높이가 명시되지 않았음.   
+
+  기본적으로 HTML 요소는 내용(content)에 맞는 크기를 가진다.  
+  `.sub-menu` 내부에는 `<ul>` 리스트만 들어 있기 때문에, `.sub-menu`의 높이는 `<ul>` 콘텐츠 높이만큼만 설정된다.  
+  결과적으로 `.sub-menu`의 높이가 `justify-content: center`가 작동할 만큼 충분하지 않는 것이다.  
+
+  ② Flexbox가 공간 기준으로 작동함  
+
+  `justify-content`와 `align-items` 속성은 **부모 요소의 가용 공간(남는 여백)**을 기준으로 자식을 정렬한다.  
+  그러나 `.sub-menu`의 높이가 자식 콘텐츠와 동일하다면 "남는 공간"이 없어서 정렬이 제대로 작동하지 않는다.  
+
+  ###### 4-4-4.디버깅 과정
+  ① 개발자 도구(DevTools)로 요소 확인  
+    
+  `.sub-menu`의 높이가 지정되지 않음. 기본 높이가 콘텐츠의 높이로 제한되고 있어 수직 정렬이 적용되지 않음.  
+  `.menu_list--promotion_event`의 `display: flex;`는 가로 방향으로만 작동하고, 세로 방향 정렬은 처리되지 않음.  
+
+  ② CSS 속성 점검  
+
+  `.sub-menu`에 `display: flex;`와 `flex-direction: column;`을 추가하지 않아 수직 중앙 정렬 조건을 충족하지 못함.  
+
+  ###### 4-4-5.코드 적용 및 결과 확인
+  이전 상태:  
+  `<ul class="menu_list--promotion_event">`가 상단에 고정되어 있었음.
+  수정 후 상태:  
+  `.menu_list--promotion_event`가 `.sub-menu`의 전체 높이 기준으로 수직 중앙에 배치됨.
+
+  ###### 4-4-6.결론
+
+  ① 문제 원인:  
+  `.sub-menu`에 Flexbox 레이아웃과 세로 방향 정렬 속성(`flex-direction: column;`, `justify-content: center;`)이 누락됨. 부모 컨테이너에서 수직 중앙 정렬이 불가능한 상태였음.  
+
+  ② 해결 방법:
+  `.sub-menu`를 Flexbox로 설정하고, 세로 방향 중앙 정렬 속성을 추가.
+
+  #### 4-5.`.search`와 `.material-icons`의 높이 문제
+  ###### 4-5-1.문제 정의
+  증상:  
+  `input`의 높이는 정상적으로 `3.25em`로 설정되었으나, `.search`와 `.material-icons`의 높이가 `input`보다 더 크게 설정되어 레이아웃이 어긋나는 문제 발생.
+  ###### 4-5-2.문제의 원인 분석
+  ① `bottom` 속성의 영향  
+
+  `.search`와 `.material-icons`에서 `position: absolute;`로 설정된 상태에서 `top`과 `bottom`이 동시에 지정되어 있었다.  
+  `top`과 `bottom`이 지정되면 요소의 높이(`height`)가 부모 요소에 종속되지 않고, `top`과 `bottom`의 거리만큼 확장된다.  
+
+  ② 불필요한 레이아웃 설정  
+
+  `.material-icons`에 `margin: auto;`와 함께 `top`과 `bottom`이 지정되어 있어, 아이콘의 위치뿐만 아니라 크기에도 영향을 미쳤다.  
+
+  ③ 부모 요소 크기와 자식 요소의 불일치
+
+  `.search`에 높이가 명시되지 않고 `top`과 `bottom`으로만 크기가 결정되었으며, 이로 인해 input과 다른 높이를 가지게 되었다.
+
+
+  ###### 4-5-3.코드 적용 및 결과 확인
+  ① 문제 원인 검증  
+
+  `.search`와 `.material-icons`의 `bottom` 속성을 제거하자, 높이가 `input`과 동일해짐을 확인.  
+  이는 `top`과 `bottom`으로 높이가 과도하게 설정되었음을 확인 됨.  
+
+  ② `bottom` 제거  
+
+  `.search`와 `.material-icons`에서 `bottom` 속성을 제거하여 요소의 크기를 의도한 대로 제한.  
+
+  ③ 레이아웃 개선
+
+  flexbox를 사용하여 `.search` 내에서 `input`과 `.material-icons`의 정렬을 간소화.  
+  불필요한 위치 관련 속성(`top`, `bottom`, `margin`)을 제거하고, 아이콘 크기는 `font-size`로 제어 함.
+  ###### 4-5-4.트러블슈팅의 교훈
+  `position: absolute;`와 `top`, `bottom`의 조합을 사용할 때, 요소의 크기(`height`)에 미치는 영향을 주의 깊게 살펴봐야 한다.  
+  복잡한 레이아웃 설정 대신 flexbox를 활용하면, 자식 요소 정렬과 크기 조정이 훨씬 간단해진다.  
+  항상 문제의 원인을 단계적으로 확인하고, 작은 수정으로 해결 여부를 검증하며 진행해야 한다.
 
 <p align="center">
   <img width="460" height="300" src="./image/Finished1.png">
