@@ -1,7 +1,12 @@
 @charset "UTF-8";
+@media (max-width: 768px) {
+  .product_img_wrap {
+    grid-template-columns: 1fr;
+  }
+}
 /* COMMON */
 html {
-  width: 100em;
+  width: 100%; /* 92em */
   height: 2500px;
 }
 
@@ -112,14 +117,14 @@ header .header__inner h1 a.logo img {
 }
 header .header__inner .search {
   position: absolute;
-  top: 2em;
+  top: 2.5em;
   left: 35em;
-  height: 5em;
+  height: 4.5em;
   display: flex;
   align-items: center;
 }
 header .header__inner .search input {
-  width: 30em;
+  width: 25em;
   height: 100%; /* 부모 요소와 동일한 높이 */
   border: 0.1em solid #F44336;
   box-sizing: border-box;
@@ -203,7 +208,7 @@ main .main-menu .delivery .deliver__item--name button .material-icons--lists {
 main .main-menu .delivery .deliver__item--name button .material-icons--lists .material-icons.truck {
   position: absolute;
   top: 0.45em;
-  left: 10.8em;
+  left: 8em;
 }
 main .main-menu .delivery .deliver__item--name button .material-icons--lists h2 {
   text-align: center;
@@ -212,7 +217,7 @@ main .main-menu .delivery .deliver__item--name button .material-icons--lists .ma
   width: 1em;
   position: absolute;
   top: 0.5em;
-  left: 15em;
+  left: 12.5em;
 }
 main .main-menu .delivery .deliver__item--name:hover + .deliver__item--contents {
   display: block;
@@ -222,8 +227,8 @@ main .main-menu .delivery .deliver__item--contents {
   width: 13.25em;
   height: 0;
   position: absolute;
-  top: 3.5em;
-  left: 16em;
+  top: 3.1em;
+  left: 10.7em;
   background-color: #F9F9F9;
   font-size: 1.5em;
   text-align: center;
@@ -258,7 +263,7 @@ main .main-menu .menu_list--shopping_cate .shopping_cate__item--name a span:hove
   text-decoration: underline;
 }
 main .promotion .swiper .swiper-wrapper {
-  width: 1000px;
+  width: 100%; /*  1000px */
   height: 500px;
 }
 main .promotion .swiper .swiper-wrapper .swiper-slide a img {
@@ -380,7 +385,7 @@ footer .footer_menu {
   border-top: 1px solid #E4E4E4;
   border-bottom: 1px solid #E4E4E4;
   position: relative;
-  margin: 6em 5em;
+  margin: 6em 0;
 }
 footer .footer_menu .menu_ul {
   margin: 0 200px;

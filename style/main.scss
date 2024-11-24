@@ -1,6 +1,12 @@
+@media (max-width: 768px) {
+  .product_img_wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* COMMON */
 html {
-  width: 100em;
+  width: 100%; /* 92em */
   height: 2500px;
 }
 body {
@@ -123,13 +129,13 @@ header {
     }
     .search {
       position: absolute;
-      top: 2em;
+      top: 2.5em;
       left: 35em;
-      height: 5em;
+      height: 4.5em;
       display: flex;
       align-items: center;
       input {
-        width: 30em;
+        width: 25em;
         height: 100%; /* 부모 요소와 동일한 높이 */
         border: 0.1em solid #F44336;
         box-sizing: border-box;
@@ -224,7 +230,7 @@ main {
             .material-icons.truck {
               position: absolute;
               top: 0.45em;
-              left: 10.8em;
+              left: 8em;
             }
             h2 {
               text-align: center;
@@ -233,7 +239,7 @@ main {
               width: 1em;
               position: absolute;
               top: 0.5em;
-              left: 15em;
+              left: 12.5em;
             }
           }
         }
@@ -250,8 +256,8 @@ main {
         width: 13.25em;
         height: 0;
         position: absolute;
-        top: 3.5em;
-        left: 16em;
+        top: 3.1em;
+        left: 10.7em;
         background-color: #F9F9F9;
         font-size: 1.5em;
         text-align: center;
@@ -304,7 +310,7 @@ main {
   .promotion {
     .swiper {
       .swiper-wrapper {
-        width: 1000px;
+        width: 100%; /*  1000px */
         height: 500px;
         .swiper-slide {
           a {            
@@ -474,7 +480,7 @@ footer {
     border-top: 1px solid #E4E4E4;
     border-bottom: 1px solid #E4E4E4;
     position: relative;
-    margin: 6em 5em;
+    margin: 6em 0;
 
     .menu_ul {
       margin: 0 200px;
