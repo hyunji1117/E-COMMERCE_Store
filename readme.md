@@ -1,5 +1,6 @@
 # e-커머스 쇼핑몰 플랫폼
-https://taupe-lokum-090ebf.netlify.app/ (PC Ver. 지원가능)
+Link: [홈페이지(PC Ver. 지원가능)][홈페이지 링크]
+[홈페이지 링크]: https://taupe-lokum-090ebf.netlify.app/ "바로가기"
 
 ##### 참여자: 김현지 (개인 프로젝트)  
   
