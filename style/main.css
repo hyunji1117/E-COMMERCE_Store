@@ -34,6 +34,36 @@ body {
   }
 }
 
+/* LOADING */
+#loader {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DDDDDD;
+}
+
+#l-c {
+  color: #16181B;
+}
+
+#loader span {
+  font-size: 22rem;
+  letter-spacing: -1.2rem;
+}
+
+@media (max-width: 767px) {
+  #loader span {
+    font-size: 11rem;
+    letter-spacing: -0.7rem;
+  }
+}
+/* 커스텀 커서 */
 .cursor {
   width: 2em;
   height: 2em;
@@ -139,7 +169,7 @@ header .header__inner {
   position: relative;
 }
 header .header__inner h1 a.logo img {
-  width: 19em;
+  width: 18em;
   margin-left: 5em;
 }
 header .header__inner .search {
