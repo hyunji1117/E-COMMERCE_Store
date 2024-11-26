@@ -4,18 +4,38 @@
   }
 }
 
+$base-font-size: 1em;
+$base-line-height: 1.5;
+$base-letter-spacing: 0;
+
+@mixin responsive-typography ($font-size, $line-height: $base-line-height, $letter-spacing: $base-letter-spacing) {
+  font-size: $font-size;
+  line-height: $font-size * $line-height;
+  letter-spacing: $letter-spacing;
+
+  @media (max-width: 768px) {
+    font-size: $font-size * 0.9; // 작은 화면에서는 크기를 90%로 줄임
+    line-height: ($font-size * $line-height) * 0.9; // 비례 줄 간격
+  }
+
+  @media (max-width: 480px) {
+    font-size: $font-size * 0.8; // 더 작은 화면에서는 80%
+    line-height: ($font-size * $line-height) * 0.8;
+  }
+}
+
 /* COMMON */
 html {
-  width: 92em; /* 92em */
-  height: 2500px;
+  width: 92em;
+  height: 156.3em;
 }
 body {
-  /* height: 2300px; */
+  @include responsive-typography(1.5em, 1.7);
   color: #16181B;
   font-family: "Gothic A1", sans-serif;
-  font-weight: 400px;
+  font-weight: bold;
   font-size: 62.5%;
-  line-height: 1.4;
+  // line-height: 1.4;
   cursor: none;
   margin: 0;
 }
@@ -102,7 +122,7 @@ header {
         }
 
         a {
-          font-size: 1.45em;
+          @include responsive-typography(1.45em);
           padding: 0.35em 0.7em;
           white-space: nowrap;
 
@@ -122,7 +142,7 @@ header {
     h1 {
       a.logo {
         img {
-          width: 18em;
+          width: 19em;
           margin-left: 5em;
         }
       }
@@ -145,7 +165,7 @@ header {
         cursor: unset;
       }
       .material-icons {
-        font-size: 2.5em;
+        @include responsive-typography(2.5em);
         cursor: pointer;
         position: relative;
         right: 1.75em;
@@ -181,7 +201,7 @@ header {
           }
 
           a {
-            font-size: 1.6em;
+            @include responsive-typography(1.6em);
             padding: 0.35em 0.7em;
           }
           &:hover {
@@ -192,8 +212,17 @@ header {
       }
     }
     .material-icons.more-btn{
+      @include responsive-typography(4em);
+      height: 1em;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      display: flex;
       border: none;
-      font-size: 4em;
+      align-items: center;
+      text-align: center;
       color: rgb(153, 151, 151);
       display: none;
     }
@@ -225,7 +254,8 @@ main {
           height: 3.5em;
 
           .material-icons--lists {
-            font-size: 1.2em;
+            @include responsive-typography(1.2em);
+            font-family: "Gothic A1", sans-serif;
 
             .material-icons.truck {
               position: absolute;
@@ -253,13 +283,13 @@ main {
 
 
       .deliver__item--contents {
+        @include responsive-typography(1.5em, .9);
         width: 13.25em;
         height: 0;
         position: absolute;
         top: 3.1em;
-        left: 10.8em;
+        left: 10.75em;
         background-color: #F9F9F9;
-        font-size: 1.5em;
         text-align: center;
         border-radius: 0.13em;
         transition: height .1s;
@@ -295,8 +325,8 @@ main {
           text-align: center;
 
           span {
+            @include responsive-typography(1.6em);
             padding: 0.35em 0.4em;
-            font-size: 1.6em;
 
             &:hover {
               text-decoration: underline;
@@ -347,11 +377,11 @@ main {
 
 /* PRODUCTS */
 h3 {
+  @include responsive-typography(2.5em);
   width: 70%;
   margin: 0 auto;
   margin-top: 3em;
   padding-left: 1.5em;
-  font-size: 2.5em;
 }
 
 .product_unit {
@@ -399,9 +429,9 @@ h3 {
         }
         .brand--name {
           >a {
+            @include responsive-typography(1.45em);
             color: #777;
-            font-size: 1.45em;
-            font-weight: 700;
+            font-weight: bold;
             margin-top: 10px;
 
             &:hover {
@@ -411,8 +441,8 @@ h3 {
         }
         .product--name {
           >a {
+            @include responsive-typography(1.6em, .9);
             color: #16181B;
-            font-size: 1.6em;
             font-weight: lighter;
             margin: 5px 0 0;
             padding: 2px 0;
@@ -423,25 +453,25 @@ h3 {
           }
         }
         .product--price {
+          @include responsive-typography(2em, 1);
           color: #16181B;
-          font-size: 20px;
-          font-weight: 700;
+          font-weight: bold;
+
           .product--price_currency{
-            /* width: 20px; */
+            @include responsive-typography(0.725em);
             color: #16181B;
-            font-size: 0.725em;
-            font-weight: 700;
+            font-weight: bold;
             margin-left: -5px;
           }
         }
         .promo_icon {
+          @include responsive-typography(1.5em, .9);
           display: flex;
           justify-content: center;
           margin: 5px 0 0;
           .promo_icon_sale {
             width: 40px;
             height: 18px;
-            font-size: 1.45em;
             color: #FFF;
             border-radius: 50px;
             border: 1px solid #F65B60;
@@ -452,13 +482,13 @@ h3 {
           .promo_icon_coupon {
             width: 40px;
             height: 18px;
-            font-size: 1.45em;
             color: #FFF;
             border-radius: 50px;
             border: 1px solid #9BCE26;
             background-color: #9BCE26;
             display: block;
-            align-content: center;
+            // align-content: center;
+            text-align: center;
           }
           
         }
@@ -483,8 +513,8 @@ footer {
     margin: 6em 0;
 
     .menu_ul {
-      margin: 0 200px;
-      font-size: 14.5px;
+      @include responsive-typography(1.6em, .9);
+      margin: 0 12em;
       align-items: center;
 
       li {
@@ -518,7 +548,7 @@ footer {
     }
 
     .footer_toggle_menu {
-      font-size: 14.5px;
+      @include responsive-typography(1.45em);
       float: right;
       padding: 10px 15px;
       margin: 4px 250px 4px 0;
@@ -527,19 +557,19 @@ footer {
       li.toggle_menu {
 
         .toggle_menu--name {
+          @include responsive-typography(1.45em, .95);
           border: 1px solid #CCC;
-          font-size: 1.45em;
           text-align: center;
 
           button {
+            @include responsive-typography(0.68em);
             width: 165px;
             height: 30px;
             padding: 0 20px 0 10px;
             border: 0;
-            font-size: 0.68em;
 
             .material-icons.keyboard_arrow_down {
-              height: 24px;
+              height: 25px;
               position: absolute;
               top: 14.5px;
               bottom: 0;
@@ -553,17 +583,17 @@ footer {
     }
 
     .toggle_menu--contents {
+      @include responsive-typography(1.45em, 1);
       position: absolute;
       top: 45.5px;
       right: 265px;
       width: 165px;
-      height: 70px;
+      height: 75px;
       background-color: #F9F9F9;
       border-top: 1px solid #F4F4F4;
       border-left: 1px solid #CCC;
       border-right: 1px solid #CCC;
       border-bottom: 1px solid #CCC;
-      font-size: 14.5px;
       text-align: center;
       align-items: center;
       transition: height .1s;
@@ -592,13 +622,13 @@ footer {
   }
 
   .footer_contents {
+    @include responsive-typography(1.45em, 1);
     width: 100%;
-    font-size: 14.5px;
 
     h4 {
+      @include responsive-typography(1.25em);
       margin: 0 12em 1em 12em;
-      font-size: 1.25em;
-      font-weight: 700;
+      font-weight: bold;
     }
 
     .footer_info {
@@ -634,7 +664,7 @@ footer {
       margin-top: 20px;
 
       p {
-        font-size: 12px;
+        @include responsive-typography(1.25em, 1);
         color: #777;
         margin: 0 215px;
         padding: 0 0 0px 0;
@@ -650,16 +680,15 @@ footer {
       position: absolute;
       bottom: -1.5em;
       right: 26em;
-      // padding: 20px;
       display: flex; /* 내용 정렬 */
       // align-items: center;
 
       strong {
+        @include responsive-typography(1.25em);
         width: auto;
         height: 15px;
-        font-size: 12.5px;
-        font-weight: 700;
-        margin: 5px 10px 0 0;
+        font-weight: bold;
+        margin: 0px 10px 0 0;
       }
 
       span>img {
