@@ -97,3 +97,24 @@ deliverItemContents.addEventListener('mouseleave', () => {
     deliverItemContents.style.display = 'none';
   }, LEAVE_HOVER);
 });
+
+
+//LOADING
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("loader");
+  const counter = document.getElementById("counter");
+  let progress = 0;
+
+  const interval = setInterval(() => {
+      progress += 1;
+      counter.textContent = `${progress}%`;
+
+      if (progress >= 100) {
+          clearInterval(interval);
+          loader.style.opacity = "0";
+          setTimeout(() => {
+              loader.style.display = "none";
+          }, 350); // 로딩 화면 페이드아웃 후 숨김
+      }
+  }, 35); // 35ms마다 업데이트
+});
